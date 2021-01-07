@@ -1,0 +1,16 @@
+.header_main{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: rgb(101, 157, 206);
+
+}
+
+.header_right{
+    display: flex;
+}
+
+.header_left{
+    display: flex;
+}
