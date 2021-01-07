@@ -8,6 +8,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import HomeIcon from '@material-ui/icons/Home';
+import ScheduleRoundedIcon from '@material-ui/icons/ScheduleRounded';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -46,6 +48,12 @@ export default function Header() {
             <Typography variant="h6" className={classes.title}>
               Photos
             </Typography>
+            <IconButton>
+              <HomeIcon/>
+            </IconButton>
+            <IconButton>
+              <ScheduleRoundedIcon/>
+            </IconButton>
             {auth && (
               <div>
                 <IconButton
