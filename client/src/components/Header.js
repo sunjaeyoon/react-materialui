@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+//import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -10,6 +10,27 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import ScheduleRoundedIcon from '@material-ui/icons/ScheduleRounded';
+import Button from '@material-ui/core/Button';
+
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+});
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,6 +61,7 @@ export default function Header() {
   
     return (
       <div className={classes.root}>
+        <ThemeProvider theme={theme}>
         <AppBar position="static">
           <Toolbar>
             <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -48,6 +70,17 @@ export default function Header() {
             <Typography variant="h6" className={classes.title}>
               Photos
             </Typography>
+            
+            <Button color="secondary">
+              Home
+            </Button>
+            <Button color="secondary">
+              About
+            </Button>
+            <Button color="secondary">
+              Something
+            </Button>
+            
             <IconButton>
               <HomeIcon/>
             </IconButton>
@@ -87,6 +120,7 @@ export default function Header() {
             )}
           </Toolbar>
         </AppBar>
+        </ThemeProvider>
       </div>
     );
   }
